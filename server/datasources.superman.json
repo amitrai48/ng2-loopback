@@ -1,0 +1,11 @@
+{
+ "mongodb": {
+    "name": "mongodb",
+    "connector": "mongodb",
+    "host": "localhost",
+    "port": 27017,
+    "database": "superman",
+    "username": "",
+    "password": ""
+  }
+}

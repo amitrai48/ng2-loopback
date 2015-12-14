@@ -1,0 +1,27 @@
+{
+  "name": "angular2-todo",
+  "description": "angular2-todo",
+  "main": "server/server.js",
+  "authors": [
+    "amit"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular2"
+  ],
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

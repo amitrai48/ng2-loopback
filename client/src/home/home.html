@@ -1,0 +1,11 @@
+<div class="panel panel-default">
+<div class="panel-heading">
+<form [ng-form-model]="todoForm" (submit)="addTodo()">
+	<input class="toggle" type="checkbox" (click)="selectAll()" [ng-class]="{'completed':allSelected}"/><input type="text" placeholder="What Needs to be done? " class="todo-input" ng-control="title"/>
+	</form>
+</div>
+
+<div class ="panel-body" *ng-for = "#todo of todos">
+	<input class="toggle" type="checkbox" (click)="todoToggle(todo)" [ng-class]="{'completed':todo.completed}"/><a [router-link]=['/Details']><p class="todo-title" [ng-class]="{'completed':todo.completed}">{{todo.title}}</p></a>
+</div>
+</div>
