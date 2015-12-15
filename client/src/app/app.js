@@ -26,8 +26,8 @@ var App = (function () {
             templateUrl: 'src/app/app.html'
         }),
         router_1.RouteConfig([
-            { path: '/', redirectTo: '/home' },
-            { path: '/home', as: 'Home', component: home_1.Home },
+            { path: '/', redirectTo: '/home/superman' },
+            { path: '/home/:tenant', as: 'Home', component: home_1.Home },
             { path: '/details', as: 'Details', component: settings_1.Settings }
         ]), 
         __metadata('design:paramtypes', [router_1.Router])

@@ -1,11 +1,26 @@
 <div class="panel panel-default">
 <div class="panel-heading">
-<form [ng-form-model]="todoForm" (submit)="addTodo()">
-	<input class="toggle" type="checkbox" (click)="selectAll()" [ng-class]="{'completed':allSelected}"/><input type="text" placeholder="What Needs to be done? " class="todo-input" ng-control="title"/>
+<form (submit)="addTodo()">
+	<input class="toggle" type="checkbox" (click)="selectAll()" [ng-class]="{'completed':allSelected}" *ng-if="todos && todos.length>0"/><input type="text" placeholder="What Needs to be done? " class="todo-input" ng-control="title" [(ng-model)]="todo.title" required/>
 	</form>
 </div>
 
 <div class ="panel-body" *ng-for = "#todo of todos">
 	<input class="toggle" type="checkbox" (click)="todoToggle(todo)" [ng-class]="{'completed':todo.completed}"/><a [router-link]=['/Details']><p class="todo-title" [ng-class]="{'completed':todo.completed}">{{todo.title}}</p></a>
+	<span class="remove" (click)="remove(todo)">X</span>
+</div>
+
+
+<div class="panel-footer">
+	<span class="todo-count">
+		<span *ng-if="remaining==1"><strong>{{remaining}}</strong> item left</span>
+		<span *ng-if="remaining!=1"><strong> {{remaining}}</strong> items left</span>
+	</span>
+	<ul class="todo-filter">
+	<li (click)="filter('ALL')" [ng-class]="{'selected':state=='ALL'}">All</li>
+	<li (click)="filter('ACTIVE')" [ng-class]="{'selected':state=='ACTIVE'}">Active</li>
+	<li (click)="filter('COMPLETED')" [ng-class]="{'selected':state=='COMPLETED'}">Completed</li>
+	</ul>
+
 </div>
 </div>

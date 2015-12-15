@@ -13,8 +13,8 @@ import {Settings} from '../settings/settings';
 	templateUrl:'src/app/app.html'
 })
 @RouteConfig([
-	{ path: '/', redirectTo: '/home' },
-	{ path: '/home', as:'Home', component: Home},
+	{ path: '/', redirectTo: '/home/superman' },
+	{ path: '/home/:tenant', as:'Home', component: Home},
 	{ path: '/details', as:'Details', component: Settings}
 ])
  export class App {
